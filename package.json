@@ -7,10 +7,10 @@
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "tsc": "tsc",
     "prebuild": "npm run lint",
-    "build": "tsc",
+    "build": "npm run tsc",
     "dev": "npm run lint && ts-node-dev --respawn --transpileOnly ./app/app.ts",
-    "prod": "build && node ./build/app.js",
-    "test": "build && mocha --timeout 5000"
+    "prod": "npm run build && node ./build/app.js",
+    "test": "npm run build && mocha --timeout 5000"
   },
   "repository": {
     "type": "git",
