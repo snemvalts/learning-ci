@@ -4,10 +4,13 @@
   "description": "learning-ci =========== just learning ci",
   "main": "app.js",
   "scripts": {
+    "lint": "tslint -c tslint.json -p tsconfig.json",
     "tsc": "tsc",
-    "dev": "ts-node-dev --respawn --transpileOnly ./app/app.ts",
-    "prod": "tsc && node ./build/app.js",
-    "test": "tsc && mocha --timeout 5000"
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "dev": "npm run lint && ts-node-dev --respawn --transpileOnly ./app/app.ts",
+    "prod": "build && node ./build/app.js",
+    "test": "build && mocha --timeout 5000"
   },
   "repository": {
     "type": "git",
@@ -23,7 +26,9 @@
     "@types/express": "^4.16.1",
     "express": "^4.16.4",
     "ts-node-dev": "^1.0.0-pre.32",
-    "typescript": "^3.4.4"
+    "typescript": "^3.4.4",
+    "tslint": "^5.16.0",
+    "tslint-config-airbnb": "^5.11.1"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
