@@ -5,11 +5,11 @@ const app: express.Application = express();
 
 app.get('/', (req, res) => {
   // res.writeHead(200, {'Content-Type': 'text/html'});
-  res.send('Hello World!');
+  res.send('Hello world!');
 });
 
 app.get('/json/', (req, res) => {
-  res.json({ msg: 'Hello World!' });
+  res.json({ msg: 'Hello world!' });
 });
 
 module.exports = app.listen(3000,  () => {
