@@ -8,25 +8,25 @@ chai.use(chaiHTTP);
 
 describe('Main', () => {
     describe('GET /', () => {
-        it('Should load \'Hello World\'', (done) => {
+        it('Should load \'Hello world\'', (done) => {
             chai.request(server)
                 .get('/')
                 .end((err, res) => {
                     expect(res.status).to.equal(200);
-                    expect(res.text).to.equal('Hello World!');
+                    expect(res.text).to.equal('Hello world!');
                     done();
                 })
         });
     });
 
     describe('GET /json/', () => {
-        it('Should load Hello World as JSON', (done) => {
+        it('Should load Hello world as JSON', (done) => {
             chai.request(server)
                 .get('/json/')
                 .end((err, res) => {
                     expect(res.status).to.equal(200);
                     expect(JSON.parse(res.text)).to.haveOwnProperty('msg');
-                    expect(JSON.parse(res.text)['msg']).to.equal('Hello World!');
+                    expect(JSON.parse(res.text)['msg']).to.equal('Hello world!');
                     done();
                 })
         });
