@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/json/', (req, res) => {
-  res.json({msg: 'Hello tarvis!'});
+  res.json({ msg: 'Hello tarvis!' });
 });
 
 module.exports = app.listen(3000,  () => {
